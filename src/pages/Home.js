@@ -17,7 +17,7 @@ const Home = () => {
   });
 
   return (
-    <div className="folders-wrapper" onLoad={folderHandler}>
+    <div className="home" onLoad={folderHandler}>
       <Folder title="My Projects" to="/projects" tabIn="1" />
       <Folder title="My Service" to="/services" tabIn="2" />
       <Folder title="Technologies" to="/technologies" full="true" tabIn="3" />

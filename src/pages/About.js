@@ -21,7 +21,7 @@ const About = () => {
       <File
         title="About me"
         full={true}
-        to={process.env.PUBLIC_URL + "/files/aboutme.html"}
+        to={process.env.PUBLIC_URL + "/files/Aboutme.html"}
         tabIn="1"
         id="1"
       />
