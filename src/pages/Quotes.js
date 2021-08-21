@@ -38,6 +38,7 @@ const Quotes = () => {
           to={vbs.to}
           title={`vb${vbs.to}.jpg`}
           tabIn={vbs.id}
+          key={vbs.id}
           id={vbs.id}
           openImg={openImg}
         />

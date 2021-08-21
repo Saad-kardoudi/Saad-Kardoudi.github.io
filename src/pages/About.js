@@ -1,25 +1,17 @@
 import { useEffect } from "react";
 import File from "../component/File";
 import Folder from "../component/Folder";
+import FolderHandler from "../functions/FolderHandler";
 
 const About = () => {
-  const folderHandler = () => {
-    let folders = document.getElementsByClassName("folder-holder");
-    let left = folders[0].offsetLeft + folders[0].offsetWidth;
-    folders[0].style.top = "50px";
-    for (let index = 1; index < folders.length; index++) {
-      folders[index].style.left = `${left}px`;
-      folders[index].style.top = "50px";
-      left = left + folders[index].offsetWidth;
-    }
-  };
-
   useEffect(() => {
-    folderHandler();
+    setTimeout(() => {
+      FolderHandler();  
+      },500);
   });
 
   return (
-    <div className="about" onLoad={folderHandler}>
+    <div className="about" onLoad={FolderHandler}>
       <File
         title="About me"
         full={true}

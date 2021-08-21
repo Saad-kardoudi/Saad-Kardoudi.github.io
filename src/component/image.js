@@ -1,5 +1,5 @@
 import { useState } from "react";
-const Image = ({ to, title, tabIn, openImg, id }) => {
+const Image = ({ to, title, tabIn, openImg, key,id }) => {
   /* start dragging */
   const [diffx, setDiffx] = useState(0);
   const [diffy, setDiffy] = useState(0);
@@ -30,7 +30,8 @@ const Image = ({ to, title, tabIn, openImg, id }) => {
   /*end dragging*/
   return (
     <div
-      key={id}
+      key={key}
+      id={id}
       tabIndex={tabIn}
       className="folder-holder"
       style={styles}
