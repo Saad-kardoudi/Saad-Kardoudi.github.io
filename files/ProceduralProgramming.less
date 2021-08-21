@@ -12,7 +12,7 @@ body {
 .container {
   width: 95%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0px auto;
   h1 {
     font-size: 90px;
   }
@@ -23,14 +23,29 @@ body {
   h3 {
     text-align: center;
   }
+  .grid-3 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .element {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      img {
+        margin: 6px;
+        padding: 5px;
+        width: 60px;
+      }
+    }
+  }
 }
-.imag{
-    height: 50vh;
-    width: 100vw;
-    object-fit: cover;
-    object-position: center;
+.imag {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .op {
-    opacity: 70%;
-    font-size: 9px;
-  }
+  opacity: 70%;
+  font-size: 9px;
+}
