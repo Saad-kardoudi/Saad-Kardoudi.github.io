@@ -4,12 +4,9 @@ import { useHistory } from "react-router-dom";
 const Navbar = () => {
   const history = useHistory();
   const [datest, setDatest] = useState(new Date());
-  useEffect(() => {
-    setInterval(() => setDatest(new Date()), 30000);
-  }, []);
-  return (
-    <div className="navbar">
-      <div className="item-list">
+  const back = () => {
+    if (window.location.pathname !== "/") {
+      return (
         <p
           className="go-back"
           onClick={() => {
@@ -22,6 +19,18 @@ const Navbar = () => {
           </span>
           🍑
         </p>
+      );
+    } else {
+      return <p>🍑</p>;
+    }
+  };
+  useEffect(() => {
+    setInterval(() => setDatest(new Date()), 500);
+  });
+  return (
+    <div className="navbar">
+      <div className="item-list">
+        {back()}
         <b>Finder</b>
         <p>File</p>
         <p>Edit</p>

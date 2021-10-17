@@ -1,17 +1,9 @@
-import { useEffect } from "react";
 import File from "../component/File";
 import Folder from "../component/Folder";
-import FolderHandler from "../functions/FolderHandler";
 
 const About = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      FolderHandler();  
-      },500);
-  });
-
   return (
-    <div className="about" onLoad={FolderHandler}>
+    <div className="about">
       <File
         title="About me"
         full={true}

@@ -10,12 +10,16 @@ import Service from "./pages/Service";
 import Technologie from "./pages/Technologie";
 import About from "./pages/About";
 import Quotes from "./pages/Quotes";
+import FolderHandler from "./functions/FolderHandler";
 
 function App() {
   const [styles, setStyles] = useState({
     backgroundImage: `url("${process.env.PUBLIC_URL}/back/background.jpg")`,
   });
   useEffect(() => {
+    setTimeout(() => {
+      FolderHandler();
+    }, 500);
     setInterval(() => {
       var random = Math.floor(Math.random() * 10);
       var background = [
@@ -38,7 +42,7 @@ function App() {
   }, []);
   return (
     <Router>
-      <div className="container" style={styles}>
+      <div className="container" style={styles} onLoad={FolderHandler}>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -57,7 +61,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/about/bestofquotes">
-            <Quotes/>
+            <Quotes />
           </Route>
           <Router path="*">
             <NotFound />

@@ -1,12 +1,5 @@
-import FolderHandler from "../functions/FolderHandler";
-import { useEffect } from "react";
 import File from "../component/File";
 const Technologie = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      FolderHandler();
-    }, 500);
-  });
   return (
     <div className="technologie">
       <File

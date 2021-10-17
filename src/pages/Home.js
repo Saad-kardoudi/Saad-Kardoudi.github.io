@@ -1,20 +1,9 @@
-import { useEffect } from "react";
 import File from "../component/File";
 import Folder from "../component/Folder";
-import FolderHandler from "../functions/FolderHandler";
 
 const Home = () => {
-
-
-  useEffect(() => {
-    setTimeout(() => {
-    FolderHandler();  
-    },500);
-    
-  });
-
   return (
-    <div className="home" onLoad={FolderHandler} >
+    <div className="home">
       <Folder title="My Projects" to="/projects" tabIn="1" />
       <Folder title="My Service" to="/services" tabIn="2" />
       <Folder title="Technologies" to="/technologies" full="true" tabIn="3" />
@@ -22,7 +11,7 @@ const Home = () => {
       <File
         title="My Cv"
         full={true}
-        to={process.env.PUBLIC_URL + "SAAD_KARDOUDI_CV.pdf"}
+        to={process.env.PUBLIC_URL + "SAAD_KARDOUDI_CV1.pdf"}
         tabIn="5"
         id="1"
       />
