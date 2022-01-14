@@ -124,21 +124,21 @@ a:focus {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    .go-back{
+    .go-back {
       transition: 0.2s ease-in-out;
       position: relative;
       cursor: pointer;
-      span{
+      span {
         font-size: 15px;
-        opacity: 0;        
+        opacity: 0;
         position: absolute;
         left: 2px;
         top: 2px;
-        transition: 0.2s ease-in-out;        
+        transition: 0.2s ease-in-out;
       }
-      &:hover{
-        padding-left:15px ;
-        span{
+      &:hover {
+        padding-left: 15px;
+        span {
           opacity: 1;
         }
       }
@@ -157,7 +157,7 @@ a:focus {
       background: rgba(255, 255, 255, 0.212);
       border-radius: 5px;
     }
-  }  
+  }
 }
 
 .dock {
@@ -267,14 +267,14 @@ a:focus {
     .main-img {
       height: calc(100vh - 250px);
     }
-    .close{
+    .close {
       position: absolute;
-    left: 20px;
-    top: 20px;
-    padding: 5px;
-    i{
-      font-size: 25px;
-    }
+      left: 20px;
+      top: 20px;
+      padding: 5px;
+      i {
+        font-size: 25px;
+      }
     }
   }
 }
@@ -288,7 +288,7 @@ a:focus {
   width: 100vw;
   box-sizing: border-box;
   filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
-  &:focus{
+  &:focus {
     outline: none;
   }
   .file-inner {
@@ -341,6 +341,99 @@ a:focus {
       }
       .file-title {
         text-align: center;
+      }
+    }
+    .file-main {
+      height: 100%;
+      width: 100%;
+      .main {
+        height: 100%;
+        width: 100%;
+        &iframe {
+          border: none;
+        }
+      }
+    }
+  }
+}
+.LocalBrowser {
+  z-index: 5;
+  --gap: 15px;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  height: calc(100vh - 125px);
+  width: 100vw;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.2));
+  &:focus {
+    outline: none;
+  }
+  .file-inner {
+    display: grid;
+    grid-template-rows: 40px 30px 1fr;
+    width: 100%;
+    min-width: 50vh;
+    height: 100%;
+    max-height: calc(100vh - 125px);
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    padding: 5px;
+    .file-top {
+      height: 40px;
+      display: grid;
+      grid-template-columns: calc(5px + (12px * 3) + 20px) 1fr;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.412);
+      padding-bottom: 5px;
+      .buton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 0px 0px 0px 5px;
+        .window-button {
+          width: 13px;
+          height: 13px;
+          background-color: #dcdcdc;
+          border-radius: 100%;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+          &.close {
+            background-color: #ff5c5f;
+            &:hover {
+              background-color: darken(#ff5c5f, 10%);
+            }
+          }
+          &.max {
+            background-color: #ffba3d;
+            &:hover {
+              background-color: darken(#ffba3d, 10%);
+            }
+          }
+          &.min {
+            background-color: #28ca43;
+            &:hover {
+              background-color: darken(#28ca43, 10%);
+            }
+          }
+        }
+      }
+      .file-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input {
+          text-align: center;
+          color: #aaaaaa;
+          background-color: #dcdcdc;
+          border: none;
+          outline: none;
+          border-radius: 4px;
+          width: 85%;
+          max-width: 684px;
+          height: 25px;
+        }
       }
     }
     .file-main {

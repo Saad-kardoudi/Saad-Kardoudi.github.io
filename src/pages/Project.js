@@ -1,14 +1,9 @@
-import MessageModal from "../component/MessageModal";
+import Folder from "../component/Folder";
 
 const Projects = () => {
   return (
     <div className="projects">
-      <MessageModal
-        title="Sorry"
-        messag="this page is under construction"
-        to="/"
-        button_text="Go Back home"
-      />
+      <Folder title="Sand Box" full="true" to="/projects/sandbox" tabIn="1" />
     </div>
   );
 };

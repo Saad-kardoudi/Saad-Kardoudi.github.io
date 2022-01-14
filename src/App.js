@@ -11,6 +11,7 @@ import Technologie from "./pages/Technologie";
 import About from "./pages/About";
 import Quotes from "./pages/Quotes";
 import FolderHandler from "./functions/FolderHandler";
+import SandBox from "./pages/SandBox";
 
 function App() {
   const [styles, setStyles] = useState({
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route exact path="/projects">
             <Projects />
+          </Route>
+          <Route exact path="/projects/sandbox">
+            <SandBox />
           </Route>
           <Route exact path="/services">
             <Service />
