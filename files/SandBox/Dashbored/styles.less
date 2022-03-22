@@ -1,10 +1,28 @@
-@import "font.less";
+@import "/lesss/font.less";
+@import "/lesss/grid";
+@import "/lesss/spacing";
 
+/* global */
+* {
+  /*box-sizing: border-box;*/
+  margin: 0;
+  padding: 0;
+}
+/* main-container  */
+.main-container {
+  // display: grid;
+  // grid-template-columns: auto 1fr auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
 /* side bar */
 .side-bar {
   transition: 1.1s ease;
-  height: 100%;
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
@@ -23,7 +41,6 @@
         border-radius: 4px;
         background-color: #000;
         color: #fff;
-        padding: 1px;
         z-index: 2;
       }
       .menu-title:after {
@@ -51,6 +68,10 @@
       }
     }
   }
+}
+/* main */
+.main {
+  flex-grow: 4;
 }
 /* main card */
 .card {
@@ -92,21 +113,27 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   .min-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     padding: 20px;
     border-radius: 25px;
+    --bg: #fff;
     &.sales {
       background-color: #ffeee2;
+      --bg: #ffeee2;
     }
     &.profit {
       background-color: #eefcef;
+      --bg: #eefcef;
     }
     &.orders {
       background-color: #e6f5fa;
+      --bg: #e6f5fa;
     }
     &.visits {
       background-color: #f4f5f9;
+      --bg: #f4f5f9;
     }
     .text-era {
       display: flex;
@@ -124,30 +151,50 @@
       }
     }
     .svg-era {
-      position: relative;
-      .progress-ring {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-      }
-      .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-        span {
-          font-size: 1.953rem;
-          font-weight: bold;
+      @keyframes growProgressBar {
+        0%,
+        33% {
+          --pgPercentage: 0;
+        }
+        100% {
+          --pgPercentage: var(--value);
         }
       }
-      .progress-ring__circle {
-        transition: 1.1s stroke-dashoffset;
-        // axis compensation
-        transform: rotate(-90deg);
-        transform-origin: 50% 50%;
+
+      @property --pgPercentage {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+      }
+
+      div[role="progressbar"] {
+        --size: 120px;
+        --fg: #171717;
+        --pgPercentage: var(--value);
+        animation: growProgressBar 3s 1 forwards;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(
+            closest-side,
+            var(--bg) 80%,
+            transparent 0 99.9%,
+            var(--bg) 0
+          ),
+          conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+        // font-family: Helvetica, Arial, sans-serif;
+        // font-size: calc(var(--size) / 5);
+        // color: var(--fg);
+      }
+
+      div[role="progressbar"]::before {
+        counter-reset: percentage var(--value);
+        content: counter(percentage) "%";
+        font-family: "Roboto", sans-serif;
+        font-size: 1.953rem;
+        font-weight: bold;
       }
     }
   }
@@ -158,7 +205,6 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 90%;
-  position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
@@ -198,3 +244,4 @@
     }
   }
 }
+/* progress  */
