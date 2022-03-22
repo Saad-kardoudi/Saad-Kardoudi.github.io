@@ -13,175 +13,160 @@
     />
   </head>
   <body>
-    <div class="side-bar">
-      <span>
-        <i class="bx bx-menu" onclick="open_side();"></i>
-        <p class="menu-title" style="visibility: visible">Close</p>
-        <!---- <i class="bx bx-menu"></i>------>
-      </span>
-      <span>
-        <i class="bx bx-home-alt"></i>
-        <p class="menu-title" style="visibility: visible">Home</p>
-      </span>
-      <span>
-        <i class="bx bx-trophy"></i>
-        <p class="menu-title">Projects</p>
-      </span>
-      <span>
-        <i class="bx bxs-landmark"></i>
-        <p class="menu-title">Billings</p>
-      </span>
-      <span>
-        <i class="bx bx-user"></i>
-        <p class="menu-title">Team Members</p>
-      </span>
-      <span>
-        <i class="bx bx-bar-chart-alt-2"></i>
-        <p class="menu-title">Stats</p>
-      </span>
-      <span>
-        <i class="bx bx-cog"></i>
-        <p class="menu-title">Setting</p>
-      </span>
-    </div>
-    <div class="main">
-      <h2>Hello Guido<br /><small>Welcome Back !</small></h2>
-      <div class="card">
-        <div class="section">
-          <span><i class="bx bx-show"></i></span>
-          <small>Views</small>
-          <h2>500</h2>
-          <small>Per Day</small>
-        </div>
-        <div class="section">
-          <span><i class="bx bx-compass"></i></span>
-          <small>Visits</small>
-          <h2>2000</h2>
-          <small>Per minutes</small>
-        </div>
-        <div class="section">
-          <span><i class="bx bx-store-alt"></i></span>
-          <small>Orders</small>
-          <h2>5100</h2>
-          <small>Per Day</small>
-        </div>
+    <div class="main-container">
+      <div class="side-bar">
+        <span>
+          <i class="bx bx-menu" onclick="open_side();"></i>
+          <p class="menu-title" style="visibility: visible">Close</p>
+          <!---- <i class="bx bx-menu"></i>------>
+        </span>
+        <span>
+          <i class="bx bx-home-alt"></i>
+          <p class="menu-title" style="visibility: visible">Home</p>
+        </span>
+        <span>
+          <i class="bx bx-trophy"></i>
+          <p class="menu-title">Projects</p>
+        </span>
+        <span>
+          <i class="bx bxs-landmark"></i>
+          <p class="menu-title">Billings</p>
+        </span>
+        <span>
+          <i class="bx bx-user"></i>
+          <p class="menu-title">Team Members</p>
+        </span>
+        <span>
+          <i class="bx bx-bar-chart-alt-2"></i>
+          <p class="menu-title">Stats</p>
+        </span>
+        <span>
+          <i class="bx bx-cog"></i>
+          <p class="menu-title">Setting</p>
+        </span>
       </div>
-      <div class="cards">
-        <div class="min-card sales">
-          <div class="text-era">
-            <h4>Sales</h4>
-            <small>Total Sales Today</small>
-            <h3>$500</h3>
+      <div class="main">
+        <h2>Hello Guido<br /><small>Welcome Back !</small></h2>
+        <div class="card">
+          <div class="section">
+            <span><i class="bx bx-show"></i></span>
+            <small>Views</small>
+            <h2>500</h2>
+            <small>Per Day</small>
           </div>
-          <div class="svg-era">
-            <span class="center">
-              <span class="number">55%</span>
-            </span>
-            <svg class="progress-ring" width="120" height="120">
-              <circle
-                data-percent="55"
-                class="progress-ring__circle"
-                stroke="black"
-                stroke-width="7"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"
-              />
-            </svg>
+          <div class="section">
+            <span><i class="bx bx-compass"></i></span>
+            <small>Visits</small>
+            <h2>2000</h2>
+            <small>Per minutes</small>
+          </div>
+          <div class="section">
+            <span><i class="bx bx-store-alt"></i></span>
+            <small>Orders</small>
+            <h2>5100</h2>
+            <small>Per Day</small>
           </div>
         </div>
-        <div class="min-card profit">
-          <div class="text-era">
-            <h4>Profit</h4>
-            <small>Per day ratio</small>
-            <h3>$150</h3>
+        <div class="cards">
+          <div class="min-card sales">
+            <div class="text-era">
+              <h4>Sales</h4>
+              <small>Total Sales Today</small>
+              <h3>$500</h3>
+            </div>
+            <div class="svg-era">
+              <!-- <span class="center">
+                <span class="number">55%</span>
+              </span>
+              <svg class="progress-ring" width="120" height="120">
+                <circle
+                  data-percent="55"
+                  class="progress-ring__circle"
+                  stroke="black"
+                  stroke-width="7"
+                  fill="transparent"
+                  r="52"
+                  cx="60"
+                  cy="60"
+                />
+              </svg> -->
+              <div
+                role="progressbar"
+                aria-valuenow="55"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="--value: 55"
+              ></div>
+            </div>
           </div>
-          <div class="svg-era">
-            <span class="center">
-              <span class="number">30%</span>
-            </span>
-            <svg class="progress-ring" width="120" height="120">
-              <circle
-                data-percent="30"
-                class="progress-ring__circle"
-                stroke="black"
-                stroke-width="7"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"
-              />
-            </svg>
+          <div class="min-card profit">
+            <div class="text-era">
+              <h4>Profit</h4>
+              <small>Per day ratio</small>
+              <h3>$150</h3>
+            </div>
+            <div class="svg-era">
+              <div
+                role="progressbar"
+                aria-valuenow="30"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="--value: 30"
+              ></div>
+            </div>
           </div>
-        </div>
-        <div class="min-card orders">
-          <div class="text-era">
-            <h4>Orders</h4>
-            <small>Total Order Today</small>
-            <h3>1000</h3>
+          <div class="min-card orders">
+            <div class="text-era">
+              <h4>Orders</h4>
+              <small>Total Order Today</small>
+              <h3>1000</h3>
+            </div>
+            <div class="svg-era">
+              <div
+                role="progressbar"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="--value: 80"
+              ></div>
+            </div>
           </div>
-          <div class="svg-era">
-            <span class="center">
-              <span class="number">80%</span>
-            </span>
-            <svg class="progress-ring" width="120" height="120">
-              <circle
-                data-percent="80"
-                class="progress-ring__circle"
-                stroke="black"
-                stroke-width="7"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"
-              />
-            </svg>
-          </div>
-        </div>
-        <div class="min-card visits">
-          <div class="text-era">
-            <h4>Visits</h4>
-            <small>Total Visit Today</small>
-            <h3>400</h3>
-          </div>
-          <div class="svg-era">
-            <span class="center">
-              <span class="number">70%</span>
-            </span>
-            <svg class="progress-ring" width="120" height="120">
-              <circle
-                data-percent="70"
-                class="progress-ring__circle"
-                stroke="black"
-                stroke-width="7"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"
-              />
-            </svg>
+          <div class="min-card visits">
+            <div class="text-era">
+              <h4>Visits</h4>
+              <small>Total Visit Today</small>
+              <h3>400</h3>
+            </div>
+            <div class="svg-era">
+              <div
+                role="progressbar"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="--value: 70"
+              ></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="right-sidebar">
-      <h4>Sales Revenue</h4>
-      <div class="part">
-        <span class="logo"><i class="bx bxs-offer"></i></span>
-        <span class="text"><span>230k</span><small>Sales</small> </span>
-      </div>
-      <div class="part">
-        <span class="logo"><i class="bx bx-user-circle"></i></span
-        ><span class="text"><span>8.549k</span><small>Custumers</small></span>
-      </div>
-      <div class="part">
-        <span class="logo"><i class="bx bx-layout"></i></span>
-        <span class="text"><span>1.423k</span><small>Products</small></span>
-      </div>
-      <div class="part">
-        <span class="logo"><i class="bx bx-pie-chart-alt"></i></span>
-        <span class="text"><span>$9745</span><small>Revenue</small></span>
+      <div class="right-sidebar">
+        <h4>Sales Revenue</h4>
+        <div class="part">
+          <span class="logo"><i class="bx bxs-offer"></i></span>
+          <span class="text"><span>230k</span><small>Sales</small> </span>
+        </div>
+        <div class="part">
+          <span class="logo"><i class="bx bx-user-circle"></i></span
+          ><span class="text"><span>8.549k</span><small>Custumers</small></span>
+        </div>
+        <div class="part">
+          <span class="logo"><i class="bx bx-layout"></i></span>
+          <span class="text"><span>1.423k</span><small>Products</small></span>
+        </div>
+        <div class="part">
+          <span class="logo"><i class="bx bx-pie-chart-alt"></i></span>
+          <span class="text"><span>$9745</span><small>Revenue</small></span>
+        </div>
       </div>
     </div>
   </body>
